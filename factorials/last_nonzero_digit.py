@@ -37,28 +37,29 @@ def last_nonzero_digit_in_factorial(n):
     # because we can have at most 3 new factors of 5
     # This way, we need to store only log5(n) last non-zero digits for n factorial
 
-    last_digits = 1, # we will store last digits as a number because we do not want to deal with lists here
-    powers_of_5 = []
-    powers_of_2 = []
-
-    current_power = 5
+    last_digit = 1
     factors_of_5 = 0
     factors_of_2 = 0
 
+    powers_of_5 = []
+    powers_of_2 = []
+    
+    current_power = 5
     while True:
         powers_of_5.append(current_power)
         if current_power * 5 > n:
             break
         current_power *= 5
 
+    current_power = 2
     while True:
         powers_of_2.append(current_power)
         if current_power * 2 > n:
             break
         current_power *= 2
 
-    needed_length = 2 # how many last nonzero digits we need to store currently (it will change with every new power of 5)
-    current_max_power_of_5 = 25 # we increase needed_length when we reach 25, 125, 625, ...
+    # needed_length = 2 # how many last nonzero digits we need to store currently (it will change with every new power of 5)
+    # current_max_power_of_5 = 25 # we increase needed_length when we reach 25, 125, 625, ...
 
     for i in range(1, n+1):
         if i % 2 == 0 or i % 5 == 0:
@@ -84,9 +85,9 @@ def last_nonzero_digit_in_factorial(n):
             else:
                 last_digits *= (i // 10**min_ind)
 
-            if i == current_max_power_of_5:
-                needed_length += 1
-                current_max_power_of_5 *= 5
+            # if i == current_max_power_of_5:
+            #     needed_length += 1
+            #     current_max_power_of_5 *= 5
 
             assert factors_of_2 >= factors_of_5, "checking our assumption that number of 2s >= number of 5s"
         else:
