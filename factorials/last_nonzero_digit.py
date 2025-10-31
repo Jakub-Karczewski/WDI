@@ -66,13 +66,13 @@ def last_nonzero_digit_in_factorial(n):
             ind1 = 0
 
             # if our number is a multiply of 2 ^ k it is divisible by all lower powers of 2 as well
-            while len(powers_of_2) > 0 and i % powers_of_2[ind1] == 0:
+            while ind1 < len(powers_of_2) and i % powers_of_2[ind1] == 0:
                 factors_of_2 += 1
                 ind1 += 1
 
             # same for 5s
             ind2 = 0
-            while len(powers_of_5) > 0 and i % powers_of_5[0] == 0:
+            while ind2 < len(powers_of_5) and i % powers_of_5[0] == 0:
                 factors_of_5 += 1
                 ind2 += 1
 
