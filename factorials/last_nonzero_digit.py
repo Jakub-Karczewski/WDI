@@ -6,7 +6,7 @@ def calc_factorial(num): # function to calculate factorial of a number, can be u
     return fact
 
 def get_last_nonzero_digit(N):
-    assert n != 0, "number cannot be 0"
+    assert N != 0, "number cannot be 0"
     while True:
         # we stop counting when we reach a non-zero digit, because our number is not zero we will reach it eventually
         if N % 10 != 0: 
@@ -30,7 +30,8 @@ def last_nonzero_in_fact(n, arr):
         res = (6 * res) % 10
     return res
 
-D = [0 for _ in range(10)]
+
+D = [1 for _ in range(10)] # in order for D[0] to have value 1, because we will use it in multiplication
 res = 1
 for nr in range(1, 10, 1):
     res *= nr
