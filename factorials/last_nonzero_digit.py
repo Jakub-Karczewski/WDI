@@ -1,15 +1,12 @@
 import math
 def calc_factorial(num): # function to calculate factorial of a number, can be used for small numbers only
-    assert num >= 0, "we cannot calculate factorial of < 0 number"
     fact = 1
     for i in range(1, num+1, 1):
         fact *= i
     return fact
 
 def get_last_nonzero_digit(N):
-    if N == 0:
-        assert False, "number cannot be 0"
-
+    assert n != 0, "number cannot be 0"
     while True:
         # we stop counting when we reach a non-zero digit, because our number is not zero we will reach it eventually
         if N % 10 != 0: 
@@ -41,7 +38,7 @@ for nr in range(1, 10, 1):
 print("Computed from 1-9:", D)
 
 
-for i in [27]:
+for i in [10, 27, 100, 200]:
     fact = calc_factorial(i)
     last_digit = get_last_nonzero_digit(fact)
     computed_last_digit = last_nonzero_in_fact(i, D)
