@@ -22,7 +22,7 @@ def zeros_in_factorial(n): # function to count trailing zeros in n! using calcul
         two_pow *= 2
 
     # for example, we have 10! = 1 * 2 ... * 10
-    # multiples of 2 are 2, 4, 6, 8
+    # multiples of 2 are 2, 4, 6 ...
     # first iteration: 10//(2^1) = 5, numbers: (2, 4, 6, 8, 10) - calculates all numbers
     # that are divisible by minimum 1st power of 2
     # second iteration: 10//(2^2) = 2, numbers: (4, 8) - calculates all numbers
