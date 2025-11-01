@@ -16,7 +16,7 @@ def eratostenes(N):
     while i * i <= N: 
         if is_prime_arr[i]: 
 
-            # if previously we haven't found any factor of a number that are less than it
+            # if previously we haven't found any factors of a number that are less than it
             # (is_prime_arr for this number remained True)
             # it means it must be prime, because we have checked every possible factors before
 
@@ -26,7 +26,7 @@ def eratostenes(N):
             # we do it only for prime numbers, because for non-primes it isn't necessary
             # because their multiples will be marked by their prime factors
 
-            for j in range(i * i, N+1, i):
+            for j in range(i * i, N+1, i): # We start fron i*i because 2*i, 3*i ...  were already checked by smaller factors
                 is_prime_arr[j] = False
         i += 1
     
