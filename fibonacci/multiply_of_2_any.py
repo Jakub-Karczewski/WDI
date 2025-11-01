@@ -1,6 +1,5 @@
 def fib_product(N):
     if N == 1:
-        print("1 = 1 * 1")
         return True
     fib_arr = [1, 1]
     while fib_arr[-1] <= N:
