@@ -35,7 +35,8 @@ def fib_product_optimized(N):
             else:
                 print(f"{N} = {act} * {1} (Fib numbers)")
             return True
-        
+
+        # we use binary search to check for the other element, because fibonacci numbers are monotonic, and binsearch is useful only in that case
         left, right = 0, len(fib_arr) - 1
         while left <= right:
             mid = (left + right)//2
