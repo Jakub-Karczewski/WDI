@@ -30,7 +30,7 @@ def get_best_partition(num:list[int], k:int):
     best_right = -1 
     for p in range(len(num) - 1):
         left[p] = left[p-1] * k + num[p] 
-        # przesuniecie liczby w prawo w systemie o podstawie k i dodanie kolejnej liczby na koniec
+        # przesuniecie liczby w lewo w systemie o podstawie k i dodanie kolejnej liczby na koniec
         # czyli np chcemy z 23 w podstawie 5 zrobić 234, wtedy potęgi przy 2 i 3 podnoszą się o 1, czyli mnożymy razy 5 (podstawe)
         # i jeszcze musimy dodać 4 (bo samo podniesienie potęg to tak jakby dodanie 0 na końcu)
 
