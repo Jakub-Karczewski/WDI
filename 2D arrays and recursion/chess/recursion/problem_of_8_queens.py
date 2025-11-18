@@ -4,9 +4,9 @@
 # our recursion will go by rows, one by one, and try to place a queen in every column that is not threatened by another queen.
 # When finishing recursive call for current call, after all its subcalls returned, we will undo the move
 # Because when we try next column in that row, we don't want our arrays to still store the information for the previously placed 
-# queen, there can be only queen one per row and our recursive call ended its job, so we do not need it anymore
+# queen, cause there can be only one queen per row and our recursive call already ended its job, so we do not need to store this info anymore
 # Also, when it comes to diagonals, we can see that all elements on the same DOWN diagonal share the same row_id - col_id
-# For DOWN diagonals, possible differences range from -(n-1) to (n-1), thus for indexing we need to add n-1 to result to have indexing from 0
+# Additionally for DOWN diagonals, possible differences range from -(n-1) to (n-1), thus for indexing we need to add n-1 for result to have indexing from 0
 # On the other hand, elements on the same UP diagonal, share the same row_id + col_id, and the possible values are between 0 and 2 * (n-1)
 
 
