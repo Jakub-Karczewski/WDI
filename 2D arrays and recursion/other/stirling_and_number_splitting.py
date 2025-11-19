@@ -17,8 +17,8 @@ def print_without(tab, limit):
     
 
 # our recursion will go monotonically, starting from curr_num = 1
-# for each natural number it will try to include it one or more times before going to next iteration, this way our split will always be monotonic
-# We do not need to use backtracking here because numbers will be overwritten here in 'splitted' array
+# for each natural number it will try to include it one or more times before going to next iteration, this way our splitting will always be monotonic
+# We do not need to use backtracking here, because numbers will be overwritten here in 'splitted' array, that's magic of recursion xd
 
 def split_number(n, k, curr_num, last_idx, initial_k): # initial_k will not change, it is only useful for printing results
     global count
