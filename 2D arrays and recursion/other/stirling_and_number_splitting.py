@@ -21,11 +21,20 @@ def print_without(tab, limit):
 
 def split_number(n, k, curr_num, last_idx, initial_k): # initial_k will not change, it is only useful for printing results
     global count
+
     if k == 0: # if there are no components left
-        if n == 0: # if number was fully splitted
-            count += 1
+        if n == 0: # if number was fully splitted, otherwise our split is invalid
             print_without(splitted, initial_k)
+            count += 1
         return
+    
+    if k == 1: # we have only one component left
+        if n >= curr_num: # checking if it fits or would fit in the future
+            splitted[last_idx] = n # this if is useful if we have many small numbers at the beginning and the last is large
+            print_without(splitted, initial_k)
+            count += 1
+        return
+    
     if k * curr_num > n: # If it is impossible to form number n using k numbers that are greater of equal to curr_num
         return
     
@@ -36,8 +45,10 @@ def split_number(n, k, curr_num, last_idx, initial_k): # initial_k will not chan
         splitted[last_idx + (i - 1)] = curr_num
         split_number(n - i * curr_num, k-i, curr_num + 1, last_idx + i, initial_k) # recursion for number greater by 1
 
+
 def stirling(n, k, last_idx, initial_k, add_to_nonempty:list[int]):
     pass
+
 
 for N1, K1 in [(23, 5), (17, 4), (11, 3), (7, 2)]:
     print("-" * 100)
