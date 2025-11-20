@@ -53,7 +53,7 @@ def print_blocks(larger_blocks, max_row):
 def permutations(elems, limits, N1, K1):
     import copy
     
-    last_idxs = copy.deepcopy(last_idxs_main) # we copy this array, because there is no point in messing with indexing
+    last_idxs = copy.deepcopy(last_idxs_main) # we copy this array, because there is no point in messing with indexing and modifying content, that is used in 'stirling' func
     blocks_inner = copy.deepcopy(blocks) 
 
     def permute(n):
