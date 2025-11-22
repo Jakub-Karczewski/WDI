@@ -41,11 +41,12 @@ def multiply_elems(elem1: float | int | list[float | int] | list[list[float | in
 # The first solution that probably comes to mind is multiplying result by 2 in a loop 15 times
 # But what if there is other, more efficient way, that would require a lot less multiplications
 # Our first observation is that, when we square some number it is the same as binary shift of a power
+# e.g. (3^5)^2 = 3^10, in binary system 5 = 101, 10 = 1010
 
 # 15 is 1111 in binary system
 # let's start with the leftmost digit of binary number and try recreate our power with binary shifs (squaring the number)
 # BIN: 1, 2^1 = 2, POW: 1
-# BIN: 10, (2)^2 = 4, POW: 2,still we can see that our number has 1 on the second position from the left, thus we multiply by 2^1
+# BIN: 10, (2)^2 = 4, POW: 2, still we can see that our number has 1 on the second position from the left, thus we multiply by 2^1
 # BIN: 11, 4 * 2^1 = 8, POW: 3
 # BIN: 110, (8)^2 = 64, POW: 6, same situtation as above, we need to multiply
 # BIN: 111, 64 * 2^1 = 128, POW: 7
