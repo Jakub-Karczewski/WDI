@@ -59,7 +59,7 @@ def multiply_elems(elem1: float | int | list[float | int] | list[list[float | in
 # If we called recursive change to binary system (with // 2 and % 2) we could achieve this
 # And due to recursion property, we could start building our solution from the back, this means our last recursive call would be for n = 1
 # 15 (1) => 7 (1) => 3 (1) => 1 (1), numbers in parenthesis are the remainders mod 2
-# And every time our remainder is 1, we multiply our number additionally by our power, and return result recursively from the bottom
+# And every time our remainder is 1, we multiply our number additionally by our base, and return result recursively from the bottom
 
 
 def fast_power(elem: float | int | list[float | int] | list[list[float | int]], k: int): # elem can be number, vector or square matrix, k is a current power
