@@ -21,17 +21,17 @@ def gauss_elimination():
     for j in range(n): # we go by every column to try to create stairs
         maxi, pivot_idx = 0.0, 0 # pivot is the row we are planning to swap with our current
         for i in range(j, n):
-            # we search for the largest in abs value element in column j, because we do not want to divide by small numbers, it creates numerical errors
+            # we search for the largest in abs value element in column: j below row: j, because we do not want to divide by small numbers, it creates numerical errors
             if abs(M[i][j]) > maxi :
-                maxi, pivot_idx = abs(M[i][j]), i
+                maxi, pivot_idx = abs(M[i][j]), i # updating pivot
 
         if pivot_idx != j: # we need to swap
             swap_rows(j, pivot_idx)
 
-        divide_row(j, M[j][j]) # we want our row to have 1.0 as the element on the diagonal
+        divide_row(j, M[j][j]) # we want our row to have 1.0 as the element on the diagonal, because this way we can easily find the multiplier for adding this row to rows below
 
         for k in range(j + 1, n):
-            add_scaled_row_to_another(j, k, -M[k][j]) # we 'zero' all the elements below element on diagonal
+            add_scaled_row_to_another(j, k, -M[k][j]) # we 'zero' all the elements below element on diagonal for column j
 
 
 def print_matrix():
