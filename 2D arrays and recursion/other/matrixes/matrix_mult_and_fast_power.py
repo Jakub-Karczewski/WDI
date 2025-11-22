@@ -61,14 +61,14 @@ def multiply_elems(elem1: float | int | list[float | int] | list[list[float | in
 # 15 (1) => 7 (1) => 3 (1) => 1 (1), numbers in parenthesis are the remainders mod 2
 # And every time our remainder is 1, we multiply our number additionally by our base, and return result recursively from the bottom
 
-    # Some more examples:
-    # 2^27, 27 = 11011
-    # 2^27 = (((((2)^2 * 2)^2)^2 * 2)^2 * 2) = (((2^6)^2 * 2)^2 * 2) = 2^26 * 2 = 2^27
-    # number of multiplications = 7 ~ log2(27) + 1
+# Some more examples:
+# 2^27, 27 = 11011
+# 2^27 = (((((2)^2 * 2)^2)^2 * 2)^2 * 2) = (((2^6)^2 * 2)^2 * 2) = 2^26 * 2 = 2^27
+# number of multiplications = 7 ~ log2(27) + 1
 
-    # 5^18, 18 = 10010 
-    # 5^18 = (((((5)^2)^2)^2 * 2)^2) = (5^8 * 5)^2 = 5^18
-    # number of multiplications = 5 ~ log2(18) + 1
+# 5^18, 18 = 10010 
+# 5^18 = (((((5)^2)^2)^2 * 2)^2) = (5^8 * 5)^2 = 5^18
+# number of multiplications = 5 ~ log2(18) + 1
 
 
 def fast_power(elem: float | int | list[float | int] | list[list[float | int]], k: int): # elem can be number, vector or square matrix, k is a current power
