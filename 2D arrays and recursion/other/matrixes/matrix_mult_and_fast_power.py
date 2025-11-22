@@ -38,7 +38,7 @@ def multiply_elems(elem1: float | int | list[float | int] | list[list[float | in
         return matrix_mult(elem1, elem2)
 
 # Let's say we want raise 2 to the power of 15
-# The first solution that probably comes to mind is multiplying result by 2 in a loop 100 times
+# The first solution that probably comes to mind is multiplying result by 2 in a loop 15 times
 # But what if there is other, more efficient way, that would require a lot less multiplications
 # Our first observation is that, when we square some number it is the same as binary shift of a power
 
