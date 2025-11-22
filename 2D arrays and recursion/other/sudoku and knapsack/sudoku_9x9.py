@@ -22,7 +22,24 @@ chosen_nums = [-1 for _ in range(K)]
 def generate_valid_board():
     for i in range(N):
         for j in range(N):
-            board[i][j] = ((i * 3 + i//3 + j) % 9) + 1 # To be explained in the future
+            board[i][j] = ((i * 3 + i//3 + j) % 9) + 1
+
+    # Let's consider 6x6 sudoku
+    # For every row from 0 to 2 we start with the element grater by 3 than the starting element of previous row
+    # We can say that we move 3 elements in a cycle, that's the effect of i * 3 component
+
+    # 1 2 3 4 5 6
+    # 4 5 6 7 8 9
+    # 7 8 9 1 2 3
+
+    # Then we move into rows 3-5
+    # we can see that they are the same as previous but they are moved by 1 in cycle, because of i//3 component
+
+    # 2 3 4 5 6 7
+    # 5 6 7 8 9 1
+    # 8 9 1 2 3 4
+
+    # That's basically how it works XD
 
 
 def validate_sudoku(board):
