@@ -37,28 +37,29 @@ def multiply_elems(elem1: float | int | list[float | int] | list[list[float | in
     if type(elem1) == list and type(elem1[0]) == list: # matrix
         return matrix_mult(elem1, elem2)
 
-  # Let's say we want raise 2 to the power of 15
-    # The first solution that probably comes to mind is multiplying result by 2 in a loop 100 times
-    # But what if there is other, more efficient way, that would require a lot less multiplications
-    # Our first observation is that, when we square some number it is the same as binary shift of a power
+# Let's say we want raise 2 to the power of 15
+# The first solution that probably comes to mind is multiplying result by 2 in a loop 15 times
+# But what if there is other, more efficient way, that would require a lot less multiplications
+# Our first observation is that, when we square some number it is the same as binary shift of a power
+# e.g. (3^5)^2 = 3^10, in binary system 5 = 101, 10 = 1010
 
-    # 15 is 1111 in binary system
-    # let's start with the leftmost digit of binary number and try recreate our power with binary shifs (squaring the number)
-    # BIN: 1, 2^1 = 2, POW: 1
-    # BIN: 10, (2)^2 = 4, POW: 2,still we can see that our number has 1 on the second position from the left, thus we multiply by 2^1
-    # BIN: 11, 4 * 2^1 = 8, POW: 3
-    # BIN: 110, (8)^2 = 64, POW: 6, same situtation as above, we need to multiply
-    # BIN: 111, 64 * 2^1 = 128, POW: 7
-    # BIN: 1110, (128)^2 = 16384, POW: 14
-    # BIN: 1111, 16384 * 2^1 = 32768, POW: 15
+# 15 is 1111 in binary system
+# let's start with the leftmost digit of binary number and try recreate our power with binary shifs (squaring the number)
+# BIN: 1, 2^1 = 2, POW: 1
+# BIN: 10, (2)^2 = 4, POW: 2, still we can see that our number has 1 on the second position from the left, thus we multiply by 2^1
+# BIN: 11, 4 * 2^1 = 8, POW: 3
+# BIN: 110, (8)^2 = 64, POW: 6, same situtation as above, we need to multiply
+# BIN: 111, 64 * 2^1 = 128, POW: 7
+# BIN: 1110, (128)^2 = 16384, POW: 14
+# BIN: 1111, 16384 * 2^1 = 32768, POW: 15
 
-    # We can see that it required us log2(n) multiplications to calculate our number
-    # And the only thing we need to know is the remainer mod 2 of the current number
-    # We can use recursion in this case
-    # If we called recursive change to binary system (with // 2 and % 2) we could achieve this
-    # And due to recursion property, we could start building our solution from the back, this means our last recursive call would be for n = 1
-    # 15 (1) => 7 (1) => 3 (1) => 1 (1), numbers in parenthesis are the remainders mod 2
-    # And every time our remainder is 1, we multiply our number additionally by our power, and return result recursively from the bottom
+# We can see that it required us log2(n) multiplications to calculate our number
+# And the only thing we need to know is the remainer mod 2 of the current number
+# We can use recursion in this case
+# If we called recursive change to binary system (with // 2 and % 2) we could achieve this
+# And due to recursion property, we could start building our solution from the back, this means our last recursive call would be for n = 1
+# 15 (1) => 7 (1) => 3 (1) => 1 (1), numbers in parenthesis are the remainders mod 2
+# And every time our remainder is 1, we multiply our number additionally by our base, and return result recursively from the bottom
 
     # Some more examples:
     # 2^27, 27 = 11011
