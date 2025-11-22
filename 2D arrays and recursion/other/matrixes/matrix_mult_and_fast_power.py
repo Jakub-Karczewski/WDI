@@ -88,11 +88,12 @@ def naive_power(elem: float | list[float] | list[list[float]], k:int):
     return res
 
 
+print("\nPOWERS OF INTEGERS:\n")
 # Comparing results for fast power and standard power raising
 for n, k in [(2, 15), (3, 17), (5, 100)]:
     res = fast_power(n, k)
-    print(res)
-    print(res == naive_power(n, k))
+    print(f"{n} ^ {k} = {res}")
+    print(f"Equal: {res == naive_power(n, k)}\n")
     
 
 # --------------------------------------------------------------------
@@ -112,6 +113,7 @@ fib_M = [ [1, 1],
 print("\nFIBONACCI NUMBERS:\n")
 for N in [3, 5, 7, 15, 100]:
     res_fib = fast_power(fib_M, N)
+    print(f"N = {N}")
     if N < 20:
         print(res_fib)
     else:
