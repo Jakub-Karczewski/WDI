@@ -53,8 +53,8 @@ def knapsack_naive(W, idx, curr_val):
 #               Optimized version with memoization
 #---------------------------------------------------------------------
 mem = [[-1 for _ in range(W+1)] for _ in range(n)] # memoization table
-
 parents = [[[-1, -1] for _ in range(W+1)] for _ in range(n)] 
+
 def knapsack_better(W, idx, curr_val):
     if idx == -1:
         return curr_val
