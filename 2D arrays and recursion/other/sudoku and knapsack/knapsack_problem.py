@@ -23,7 +23,7 @@ values = [random.randint(5, 30) for _ in range(n)]
 
 
 def get_taken_idxs(taken_paths):
-    taken_filtered = [i for i,x in enumerate(taken_paths) if taken_paths[i]]
+    taken_filtered = [i for i,x in enumerate(taken_paths) if x]
     return taken_filtered
 
 
